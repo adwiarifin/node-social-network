@@ -9,6 +9,16 @@ server.route({
     method: "GET",
     path: "/",
     handler: function(request, reply) {
-        reply("welcome to node connect");
+        reply.view("test");
     }
+});
+
+server.register(require("vision"), function(err) {
+    server.views({
+        engines: {
+            ejs: require("ejs")
+        },
+        relativeTo: __dirname,
+        path: "views"
+    });
 });
