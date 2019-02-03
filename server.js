@@ -1,5 +1,8 @@
 const Hapi = require("hapi");
 const server = new Hapi.Server();
+const mongoose = require("mongoose");
+const User = require("./database_models/user_model");
+const social_network_db = mongoose.connect("mongodb://localhost/social_network");
 
 server.connection({port:3000});
 
