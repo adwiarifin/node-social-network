@@ -13,12 +13,25 @@
         </div>
 
         <div id="sign_in_div">
-                <form id="sign_in_form">
-                    <h2>Sign In&nbsp;</h2>
-                    <input type="text" id="usr_email" name="email" placeholder="Email Address" />
-                    <input type="password" id="usr_password" name="password" placeholder="Password" />
-                    <input id="sign_in_user" type="button" value="Sign In" />
-                </form>
-            </div>
+            <form id="sign_in_form">
+                <h2>Sign In&nbsp;</h2>
+                <input type="text" id="usr_email" name="email" placeholder="Email Address" />
+                <input type="password" id="usr_password" name="password" placeholder="Password" />
+                <input id="sign_in_user" type="button" value="Sign In" />
+            </form>
+        </div>
+        
+        <script>
+            $("#register_user").on("click", function() {
+                $.ajax({
+                    method: "POST",
+                    url: "/signup",
+                    data: $("#sign_up_form").serialize(),
+                    success: function() {
+                        console.log("success");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

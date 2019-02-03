@@ -39,3 +39,11 @@ server.route({
         }
     }
 });
+
+server.register({
+    register: require("./routes/user")
+}, function(err) {
+    if (err) {
+        return;
+    }
+});
